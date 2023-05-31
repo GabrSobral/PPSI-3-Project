@@ -1,124 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Projeto</title>
+    <title>Projeto</title>
 
-  <style>
-    * { font-family: 'Poppins', sans-serif; }
-  </style>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<body class="bg-black flex items-center flex-col gap-4">
-  <header class="w-full flex justify-center bg-black border-b border-gray-900">
-    <div class="w-full max-w-[1268px]">
-      <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-        <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="/index.html" class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> PPSI-3 </a>
-          
-          <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
-              <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-              <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" style="display: none"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
+  <body class="bg-black flex items-center flex-col gap-4">
+    <header
+      class="w-full flex justify-center bg-black border-b border-gray-900"
+    >
+      <div class="w-full max-w-[1268px]">
+        <div
+          x-data="{ open: false }"
+          class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+        >
+          <div
+            class="flex flex-row items-center justify-between lg:justify-start"
+          >
+            <a
+              href="/index.html"
+              class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"
+            >
+              PPSI-3
+            </a>
 
-  <main class="p-4 max-w-[1268px] w-full rounded shadow flex flex-col gap-4 flex-1 h-full">
-    <h1 class="text-2xl text-white font-light">Projects</h1>
-
-    <p class="text-gray-300 font-light">
-      Bem-vindo ao nosso portfólio de projetos! Aqui, você encontrará uma coleção de trabalhos que demonstrem nossa criatividade, habilidades e experiência em uma variedade de áreas. Ao navegar por este portfólio, você descobrirá projetos na de desenvolvimento web. Somos apaixonados por cada projeto em que trabalhamos e estamos animados para compartilhar nosso trabalho com você. Através dessas páginas, espero inspirar e demonstrar como nossas habilidades podem agregar valor aos seus próprios projetos. Entre e explore esse mundo de criatividade e profissionalismo!
-    </p>
-
-    <section class="flex justify-center">
-      <div class="flex flex-wrap mx-auto md:flex-nowrap p-12">
-    
-        <a href="/pages/to-do-list.html">
-          <div class="flex w-full">
-            <div class="hover:ring-2 hover:ring-purple-200 hover:shadow-lg relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
-              <div class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-indigo-500"></div>
-
-              <div class="px-6 py-8">
-                <h4 class="mt-4 text-2xl font-semibold text-white">
-                  To Do List
-                </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax">Uma Todo List é uma ferramenta para organizar tarefas. Priorize, defina prazos, adicione categorias e marque as tarefas concluídas. Ajuda na produtividade e evita esquecimentos. Essencial para uma rotina organizada.</p>
-              </div>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/pages/counter.html">
-          <div class="flex w-full">
-            <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
-              <div class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-red-500"></div>
-              <div class="px-6 py-8">
-                <h4 class="mt-4 text-2xl font-semibold text-white">
-                  Counter
-                </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax">Um contador com JS e HTML é uma funcionalidade que exibe e atualiza um número em uma página web. Com JavaScript e HTML, cria-se um elemento para mostrar o número e um código para incrementá-lo ou decrementá-lo. É uma solução compacta para controlar e exibir contagens, como em contadores de tempo ou estatísticas.</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="/pages/calculator.html">
-          <div class="flex w-full">
-            <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
-              <div class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-purple-500"></div>
-              <div class="px-6 py-8">
-                <h4 class="mt-4 text-2xl font-semibold text-white">
-                  Calculator
-                </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax"> Pequeno projeto criado com o intuito de treinar a manipulação do DOM!</p>
-              </div>
-            </div>
-          </div>
-        </a> 
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-black w-full border-t border-gray-900" aria-labelledby="footer-heading">
-    <div class="max-w-[1268px] m-auto">
-      <h2 id="footer-heading" class="sr-only">Footer</h2>
-    
-      <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-16">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div class="text-white xl:col-span-1">
-            <a href="./index.html" class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> PPSI-3 </a>
-            <p class="w-1/2 mt-2 text-sm text-gray-500">Projetos de Sítios Para Internet 3</p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2">
-        
+            <button
+              class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+              @click="open = !open"
+            >
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+                <path
+                  x-show="!open"
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+                <path
+                  x-show="open"
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                  style="display: none"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+    </header>
 
-      <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-16">
-        <div class="flex flex-wrap items-baseline">
-          <span class="mt-2 text-sm font-light text-gray-500">
-            Copyright © 2023
-            <a href="https://wickedlabs.dev" class="mx-2 text-wickedblue hover:text-gray-500" rel="noopener noreferrer">@PPSI-3</a>.
-          </span>
+    <main
+      class="p-4 max-w-[1268px] w-full rounded shadow flex flex-col gap-4 flex-1 h-full"
+    >
+      <h1 class="text-2xl text-white font-light">Projects</h1>
+
+      <p class="text-gray-300 font-light">
+        Bem-vindo ao nosso portfólio de projetos! Aqui, você encontrará uma
+        coleção de trabalhos que demonstrem nossa criatividade, habilidades e
+        experiência em uma variedade de áreas. Ao navegar por este portfólio,
+        você descobrirá projetos na de desenvolvimento web. Somos apaixonados
+        por cada projeto em que trabalhamos e estamos animados para compartilhar
+        nosso trabalho com você. Através dessas páginas, espero inspirar e
+        demonstrar como nossas habilidades podem agregar valor aos seus próprios
+        projetos. Entre e explore esse mundo de criatividade e profissionalismo!
+      </p>
+
+      <section class="flex justify-center">
+        <div class="flex flex-wrap mx-auto md:flex-nowrap p-12">
+          <a href="/pages/to-do-list.html">
+            <div class="flex w-full">
+              <div
+                class="hover:ring-2 hover:ring-purple-200 hover:shadow-lg relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8"
+              >
+                <div
+                  class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-indigo-500"
+                ></div>
+
+                <div class="px-6 py-8">
+                  <h4 class="mt-4 text-2xl font-semibold text-white">
+                    To Do List
+                  </h4>
+                  <p
+                    class="mt-4 text-base font-normal text-gray-500 leading-relax"
+                  >
+                    Uma Todo List é uma ferramenta para organizar tarefas.
+                    Priorize, defina prazos, adicione categorias e marque as
+                    tarefas concluídas. Ajuda na produtividade e evita
+                    esquecimentos. Essencial para uma rotina organizada.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/pages/counter.html">
+            <div class="flex w-full">
+              <div
+                class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8"
+              >
+                <div
+                  class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-purple-500"
+                ></div>
+                <div class="px-6 py-8">
+                  <h4 class="mt-4 text-2xl font-semibold text-white">
+                    Counter
+                  </h4>
+                  <p
+                    class="mt-4 text-base font-normal text-gray-500 leading-relax"
+                  >
+                    Um contador com JS e HTML é uma funcionalidade que exibe e
+                    atualiza um número em uma página web. Com JavaScript e HTML,
+                    cria-se um elemento para mostrar o número e um código para
+                    incrementá-lo ou decrementá-lo. É uma solução compacta para
+                    controlar e exibir contagens, como em contadores de tempo ou
+                    estatísticas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/pages/calculator.html">
+            <div class="flex w-full">
+              <div
+                class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8"
+              >
+                <div
+                  class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-pink-500"
+                ></div>
+                <div class="px-6 py-8">
+                  <h4 class="mt-4 text-2xl font-semibold text-white">
+                    Calculator
+                  </h4>
+                  <p
+                    class="mt-4 text-base font-normal text-gray-500 leading-relax"
+                  >
+                    Pequeno projeto criado com o intuito de treinar a
+                    manipulação do DOM!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/pages/clock.html">
+            <div class="flex w-full">
+              <div
+                class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8"
+              >
+                <div
+                  class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-red-500"
+                ></div>
+                <div class="px-6 py-8">
+                  <h4 class="mt-4 text-2xl font-semibold text-white">Clock</h4>
+                  <p
+                    class="mt-4 text-base font-normal text-gray-500 leading-relax"
+                  >
+                    Relógio digital, para treinar a manipulação do DOM!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-black w-full border-t border-gray-900"
+      aria-labelledby="footer-heading"
+    >
+      <div class="max-w-[1268px] m-auto">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+        <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-16">
+          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="text-white xl:col-span-1">
+              <a
+                href="./index.html"
+                class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"
+              >
+                PPSI-3
+              </a>
+              <p class="w-1/2 mt-2 text-sm text-gray-500">
+                Projetos de Sítios Para Internet 3
+              </p>
+            </div>
+
+            <div
+              class="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2"
+            ></div>
+          </div>
+        </div>
+
+        <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-16">
+          <div class="flex flex-wrap items-baseline">
+            <span class="mt-2 text-sm font-light text-gray-500">
+              Copyright © 2023
+              <a
+                href="https://wickedlabs.dev"
+                class="mx-2 text-wickedblue hover:text-gray-500"
+                rel="noopener noreferrer"
+                >@PPSI-3</a
+              >.
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  
-</body>
+    </footer>
+  </body>
 </html>
