@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <title>Projeto</title>
+
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/js/counter.js" defer></script>
+</head>
+
+<body class="bg-black flex items-center flex-col gap-4">
+  <header class="w-full flex justify-center bg-black border-b border-gray-900">
+    <div class="w-full max-w-[1268px]">
+      <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="flex flex-row items-center justify-between lg:justify-start">
+          <a href="./index.html" class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> PPSI-3 </a>
+          
+          <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+              <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" style="display: none"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden md:flex md:justify-start md:flex-row">
+          <ul class="space-y-2 list-none lg:space-y-0 lg:items-center lg:inline-flex">
+            <li>
+              <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-purple-600 leading-[22px] md:px-3 text-gray-500 hover:text-purple-500"> All <span class="hidden lg:inline"> templates </span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent leading-[22px] md:px-3 text-gray-500 hover:text-purple-500 hover:border-purple-600"> FAQ </a>
+            </li>
+            <li>
+              <a href="https://www.wickedtemplates.com/" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-purple-600 leading-[22px] md:px-3 text-gray-500 hover:text-purple-500"> Free <span class="hidden lg:inline">Templates </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="p-4 max-w-[1268px] w-full rounded shadow flex flex-col gap-4 min-h-[calc(100vh-28rem)] h-fit">
+    <h1 class="text-2xl text-white font-light">Counter</h1>
+
+    <p class="text-gray-300 font-light">
+      Um contador com JS e HTML é uma funcionalidade que exibe e atualiza um número em uma página web. Com JavaScript e HTML, cria-se um elemento para mostrar o número e um código para incrementá-lo ou decrementá-lo. É uma solução compacta para controlar e exibir contagens, como em contadores de tempo ou estatísticas.
+    </p>
+
+    <section class="mt-4">
+      <div class="flex" id="counter-container">
+        <button type="button" class="text-white min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem] flex items-center justify-center text-md rounded bg-purple-600 h-[41px] hover:brightness-90 transition-all focus:outline">
+          -
+        </button>
+
+        <span class="text-white min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem] flex items-center justify-center">0</span>
+
+        <button type="button" class="text-white min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem] flex items-center justify-center text-md rounded bg-purple-600 h-[41px] hover:brightness-90 transition-all focus:outline">
+          +
+        </button>
+      </div>
+
+      <ul class="flex flex-wrap gap-3" id="to-do-list-container"></ul>
+    </section>
+  </main>
+
+  <footer class="bg-black w-full border-t border-gray-900" aria-labelledby="footer-heading">
+    <div class="max-w-[1268px] m-auto">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+    
+      <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-16">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="text-white xl:col-span-1">
+            <a href="./index.html" class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> PPSI-3 </a>
+            <p class="w-1/2 mt-2 text-sm text-gray-500">Projetos de Sítios Para Internet 3</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">Navigation</h3>
+
+                <ul role="list" class="mt-4 space-y-2">
+                  <li>
+                    <a href="./pricing.html" class="text-base font-normal text-gray-500 hover:text-purple-600"> Pricing </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-12 md:mt-0">
+                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">UI/UX &amp; Dev</h3>
+
+                <ul role="list" class="mt-4 space-y-2">
+                  <li>
+                    <a href="https://www.wickedblocks.dev" class="text-base font-normal text-gray-500 hover:text-purple-600"> Wickled Blocks </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">Legal</h3>
+
+                <ul role="list" class="mt-4 space-y-2">
+                  <li>
+                    <a href="./changelog.html" class="text-base font-normal text-gray-500 hover:text-purple-600"> Changelog </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-12 md:mt-0">
+                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">Socials</h3>
+
+                <ul role="list" class="mt-4 space-y-2">
+                  <li>
+                    <a href="https://twitter.com/WickedTemplates" class="text-base font-normal text-gray-500 hover:text-purple-600"> Twitter </a>
+                  </li>
+                  <li>
+                    <a href="https://dribbble.com/MichaelAndreuzza.html" class="text-base font-normal text-gray-500 hover:text-purple-600"> Dribbble </a>
+                  </li>
+                  <li>
+                    <a href="https://www.indiehackers.com/product/wicked-templates" class="text-base font-normal text-gray-500 hover:text-purple-600"> Indie Hackers </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-16">
+        <div class="flex flex-wrap items-baseline">
+          <span class="mt-2 text-sm font-light text-gray-500">
+            Copyright © 2023
+            <a href="https://wickedlabs.dev" class="mx-2 text-wickedblue hover:text-gray-500" rel="noopener noreferrer">@PPSI-3</a>.
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
