@@ -16,6 +16,8 @@
   </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/js/counter.js" defer></script>
 </head>
 
 <body class="bg-black flex items-center flex-col gap-4">
@@ -52,58 +54,27 @@
     </div>
   </header>
 
-  <main class="p-4 max-w-[1268px] w-full rounded shadow flex flex-col gap-4 flex-1 h-full">
-    <h1 class="text-2xl text-white font-light">Projects</h1>
+  <main class="p-4 max-w-[1268px] w-full rounded shadow flex flex-col gap-4 min-h-[calc(100vh-28rem)] h-fit">
+    <h1 class="text-2xl text-white font-light">Counter</h1>
 
     <p class="text-gray-300 font-light">
-      Bem-vindo ao nosso portfólio de projetos! Aqui, você encontrará uma coleção de trabalhos que demonstrem nossa criatividade, habilidades e experiência em uma variedade de áreas. Ao navegar por este portfólio, você descobrirá projetos na de desenvolvimento web. Somos apaixonados por cada projeto em que trabalhamos e estamos animados para compartilhar nosso trabalho com você. Através dessas páginas, espero inspirar e demonstrar como nossas habilidades podem agregar valor aos seus próprios projetos. Entre e explore esse mundo de criatividade e profissionalismo!
+      Um contador com JS e HTML é uma funcionalidade que exibe e atualiza um número em uma página web. Com JavaScript e HTML, cria-se um elemento para mostrar o número e um código para incrementá-lo ou decrementá-lo. É uma solução compacta para controlar e exibir contagens, como em contadores de tempo ou estatísticas.
     </p>
 
-    <section class="flex justify-center">
-      <div class="flex flex-wrap mx-auto md:flex-nowrap p-12">
-    
-        <a href="/pages/to-do-list.html">
-          <div class="flex w-full">
-            <div class="hover:ring-2 hover:ring-purple-200 hover:shadow-lg relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
-              <img class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36  bg-yellow-200" src="/assets/images/placeholders/neon-1.jpg" alt="blog">
-              <div class="px-6 py-8">
-                <h4 class="mt-4 text-2xl font-semibold text-white">
-                  To Do List
-                </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax">Uma Todo List é uma ferramenta para organizar tarefas. Priorize, defina prazos, adicione categorias e marque as tarefas concluídas. Ajuda na produtividade e evita esquecimentos. Essencial para uma rotina organizada.</p>
-              </div>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/pages/counter.html">
-          <div class="flex w-full">
-            <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
-              <img class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36 bg-yellow-200" src="/assets/images/placeholders/neon-4.jpg" alt="blog">
-              <div class="px-6 py-8">
-                <h4 class="mt-4 text-2xl font-semibold text-neutral-600">
-                  <span class="">Counter</span>
-                </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax">Um contador com JS e HTML é uma funcionalidade que exibe e atualiza um número em uma página web. Com JavaScript e HTML, cria-se um elemento para mostrar o número e um código para incrementá-lo ou decrementá-lo. É uma solução compacta para controlar e exibir contagens, como em contadores de tempo ou estatísticas.</p>
-              </div>
-            </div>
-          </div>
-        </a>
+    <section class="mt-4">
+      <div class="flex" id="counter-container">
+        <button type="button" class="text-white min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem] flex items-center justify-center text-md rounded bg-purple-600 h-[41px] hover:brightness-90 transition-all focus:outline">
+          -
+        </button>
 
-        <a href="">
-          <div class="flex w-full">
-            <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
-              <img class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36 bg-yellow-200" src="/assets/images/placeholders/neon-4.jpg" alt="blog">
-              <div class="px-6 py-8">
-                <h4 class="mt-4 text-2xl font-semibold text-neutral-600">
-                  <span class="">Entry</span>
-                </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax">Install Tailwind CSS without any Javascript Framewrok locally with purgeCSS, enable the dark mode option, prefferences or class is upt to you.</p>
-              </div>
-            </div>
-          </div>
-        </a> 
+        <span class="text-white min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem] flex items-center justify-center">0</span>
+
+        <button type="button" class="text-white min-w-[3rem] min-h-[3rem] max-w-[3rem] max-h-[3rem] flex items-center justify-center text-md rounded bg-purple-600 h-[41px] hover:brightness-90 transition-all focus:outline">
+          +
+        </button>
       </div>
+
+      <ul class="flex flex-wrap gap-3" id="to-do-list-container"></ul>
     </section>
   </main>
 
@@ -181,6 +152,5 @@
       </div>
     </div>
   </footer>
-  
 </body>
 </html>

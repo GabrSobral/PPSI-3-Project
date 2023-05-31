@@ -21,8 +21,16 @@ function handleRenderFinishedToDoList(items) {
 
   const allContent = items.reduce((accumulator, currentValue) =>
     accumulator + 
-    `<li class="relative w-fit max-w-[500px] flex flex-col p-4 rounded-lg bg-green-900" id=${currentValue.id}>
+    `<li class="relative w-fit max-w-[500px] flex flex-col p-4 rounded-lg bg-green-900 gap-2" id=${currentValue.id}>
       <h3 class="text-sm font-medium text-gray-100">${currentValue.title}</h3>
+
+      <button 
+        onclick="removeTodoButtonClick('${currentValue.id}')" 
+        type="button" 
+        class="ml-1 bg-green-800 shadow px-2 py-1.5 rounded text-sm font-medium text-gray-200 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-600"
+      >
+        Remover
+      </button>
     </li>`
   , "");
 
@@ -33,6 +41,17 @@ function clearInput() {
   const input = document.querySelector("#text");
   input.value = "";
   input.focus();
+}
+
+function setToLocalStorage({ pendingItems, finishedItems }) {
+  localStorage.setItem("pending-items", JSON.stringify(pendingItems));
+  localStorage.setItem("finished-items", JSON.stringify(finishedItems));
+}
+function getFromLocalStorage() {
+  const pendingItems = JSON.parse(localStorage.getItem("pending-items"));
+  const finishedItems = JSON.parse(localStorage.getItem("finished-items"));
+
+  return { pendingItems, finishedItems }
 }
 
 
@@ -61,8 +80,8 @@ function updateToDo({ pendingItems, id, title }) {
   })
 }
 
-function removeToDo({ pendingItems, id }) {
-  return pendingItems.filter(item => item.id !== id)
+function removeToDo({ items, id }) {
+  return items.filter(item => item.id !== id)
 }
 
 
@@ -96,6 +115,8 @@ function createTodoButtonClick() {
   handleRenderToDoList(newToDoList);
   handleRenderFinishedToDoList(finishedItems);
 
+  setToLocalStorage({ finishedItems, pendingItems: newToDoList })
+
   clearInput()
 }
 
@@ -105,6 +126,11 @@ function finishTodoButtonClick(id) {
   
   handleRenderToDoList(newPendingItems);
   handleRenderFinishedToDoList(newFinishedItems);
+
+  setToLocalStorage({ 
+    finishedItems: newFinishedItems, 
+    pendingItems: newPendingItems 
+  })
 }
 
 function updateTodoButtonClick(id) {
@@ -119,24 +145,33 @@ function updateTodoButtonClick(id) {
   handleRenderToDoList(newToDoList);
   handleRenderFinishedToDoList(finishedItems);
 
+  setToLocalStorage({ finishedItems, pendingItems: newToDoList })
+
   clearInput();
 }
 
 function removeTodoButtonClick(id) {
   const { pendingItems, finishedItems } = getItems();
-  const newToDoList = removeToDo({ pendingItems: pendingItems, id });
+  const newPendingToDoList = removeToDo({ items: pendingItems, id });
+  const newFInishedToDoList = removeToDo({ items: finishedItems, id });
   
-  handleRenderToDoList(newToDoList);
-  handleRenderFinishedToDoList(finishedItems);
+  handleRenderToDoList(newPendingToDoList);
+  handleRenderFinishedToDoList(newFInishedToDoList);
+
+  setToLocalStorage({ 
+    finishedItems: newFInishedToDoList, 
+    pendingItems: newPendingToDoList 
+  })
 }
 
 function main() {
-  const { pendingItems } = getItems();
+  const { pendingItems, finishedItems } = getFromLocalStorage();
 
   const addButton = document.querySelector("#add-todo-button");
   addButton.addEventListener("click", createTodoButtonClick)
 
   handleRenderToDoList(pendingItems);
+  handleRenderFinishedToDoList(finishedItems)
 }
 
 main()
