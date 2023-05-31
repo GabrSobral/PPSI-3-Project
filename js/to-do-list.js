@@ -43,6 +43,17 @@ function clearInput() {
   input.focus();
 }
 
+function setToLocalStorage({ pendingItems, finishedItems }) {
+  localStorage.setItem("pending-items", JSON.stringify(pendingItems));
+  localStorage.setItem("finished-items", JSON.stringify(finishedItems));
+}
+function getFromLocalStorage() {
+  const pendingItems = JSON.parse(localStorage.getItem("pending-items"));
+  const finishedItems = JSON.parse(localStorage.getItem("finished-items"));
+
+  return { pendingItems, finishedItems }
+}
+
 
 function createToDo({ pendingItems, title }) {
   const id = self.crypto.randomUUID();
@@ -104,6 +115,8 @@ function createTodoButtonClick() {
   handleRenderToDoList(newToDoList);
   handleRenderFinishedToDoList(finishedItems);
 
+  setToLocalStorage({ finishedItems, pendingItems: newToDoList })
+
   clearInput()
 }
 
@@ -113,6 +126,11 @@ function finishTodoButtonClick(id) {
   
   handleRenderToDoList(newPendingItems);
   handleRenderFinishedToDoList(newFinishedItems);
+
+  setToLocalStorage({ 
+    finishedItems: newFinishedItems, 
+    pendingItems: newPendingItems 
+  })
 }
 
 function updateTodoButtonClick(id) {
@@ -127,6 +145,8 @@ function updateTodoButtonClick(id) {
   handleRenderToDoList(newToDoList);
   handleRenderFinishedToDoList(finishedItems);
 
+  setToLocalStorage({ finishedItems, pendingItems: newToDoList })
+
   clearInput();
 }
 
@@ -137,15 +157,21 @@ function removeTodoButtonClick(id) {
   
   handleRenderToDoList(newPendingToDoList);
   handleRenderFinishedToDoList(newFInishedToDoList);
+
+  setToLocalStorage({ 
+    finishedItems: newFInishedToDoList, 
+    pendingItems: newPendingToDoList 
+  })
 }
 
 function main() {
-  const { pendingItems } = getItems();
+  const { pendingItems, finishedItems } = getFromLocalStorage();
 
   const addButton = document.querySelector("#add-todo-button");
   addButton.addEventListener("click", createTodoButtonClick)
 
   handleRenderToDoList(pendingItems);
+  handleRenderFinishedToDoList(finishedItems)
 }
 
 main()
