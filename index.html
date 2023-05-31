@@ -23,7 +23,7 @@
     <div class="w-full max-w-[1268px]">
       <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div class="flex flex-row items-center justify-between lg:justify-start">
-          <a href="./index.html" class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> PPSI-3 </a>
+          <a href="/index.html" class="text-lg font-bold tracking-tighter text-purple-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> PPSI-3 </a>
           
           <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
             <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
@@ -32,22 +32,6 @@
             </svg>
           </button>
         </div>
-  
-        <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden md:flex md:justify-start md:flex-row">
-          <ul class="space-y-2 list-none lg:space-y-0 lg:items-center lg:inline-flex">
-            <li>
-              <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-purple-600 leading-[22px] md:px-3 text-gray-500 hover:text-purple-500"> All <span class="hidden lg:inline"> templates </span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent leading-[22px] md:px-3 text-gray-500 hover:text-purple-500 hover:border-purple-600"> FAQ </a>
-            </li>
-            <li>
-              <a href="https://www.wickedtemplates.com/" class="px-2 lg:px-6 py-6 text-sm border-b-2 border-transparent hover:border-purple-600 leading-[22px] md:px-3 text-gray-500 hover:text-purple-500"> Free <span class="hidden lg:inline">Templates </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>
     </div>
   </header>
@@ -91,15 +75,15 @@
           </div>
         </a>
 
-        <a href="">
+        <a href="/pages/calculator.html">
           <div class="flex w-full">
             <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-black shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
               <div class="w-full rounded-t-xl lg:h-48 md:h-36 bg-gradient-to-br from-purple-500"></div>
               <div class="px-6 py-8">
                 <h4 class="mt-4 text-2xl font-semibold text-white">
-                  Entry
+                  Calculator
                 </h4>
-                <p class="mt-4 text-base font-normal text-gray-500 leading-relax">Install Tailwind CSS without any Javascript Framewrok locally with purgeCSS, enable the dark mode option, prefferences or class is upt to you.</p>
+                <p class="mt-4 text-base font-normal text-gray-500 leading-relax"> Pequeno projeto criado com o intuito de treinar a manipulação do DOM!</p>
               </div>
             </div>
           </div>
@@ -120,54 +104,7 @@
           </div>
 
           <div class="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2">
-            <div class="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">Navigation</h3>
-
-                <ul role="list" class="mt-4 space-y-2">
-                  <li>
-                    <a href="./pricing.html" class="text-base font-normal text-gray-500 hover:text-purple-600"> Pricing </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="mt-12 md:mt-0">
-                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">UI/UX &amp; Dev</h3>
-
-                <ul role="list" class="mt-4 space-y-2">
-                  <li>
-                    <a href="https://www.wickedblocks.dev" class="text-base font-normal text-gray-500 hover:text-purple-600"> Wickled Blocks </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">Legal</h3>
-
-                <ul role="list" class="mt-4 space-y-2">
-                  <li>
-                    <a href="./changelog.html" class="text-base font-normal text-gray-500 hover:text-purple-600"> Changelog </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="mt-12 md:mt-0">
-                <h3 class="text-sm font-bold tracking-wider text-purple-500 uppercase">Socials</h3>
-
-                <ul role="list" class="mt-4 space-y-2">
-                  <li>
-                    <a href="https://twitter.com/WickedTemplates" class="text-base font-normal text-gray-500 hover:text-purple-600"> Twitter </a>
-                  </li>
-                  <li>
-                    <a href="https://dribbble.com/MichaelAndreuzza.html" class="text-base font-normal text-gray-500 hover:text-purple-600"> Dribbble </a>
-                  </li>
-                  <li>
-                    <a href="https://www.indiehackers.com/product/wicked-templates" class="text-base font-normal text-gray-500 hover:text-purple-600"> Indie Hackers </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        
           </div>
         </div>
       </div>
